@@ -2,7 +2,7 @@
 # 必须的文件
 # device_name='G-DOCK'      # 设备名，放到了单独设备的sh文件中了
 # wifi_name="OpenWrt"       # Wifi 名字 ,放到了单独设备的sh文件中了
-lan_ip='192.168.2.1'                                                        # Lan Ip地址
+lan_ip='192.168.88.1'                                                        # Lan Ip地址
 utc_name='Asia\/Shanghai'                                                   # 时区
 delete_bootstrap=true                                                       # 是否删除默认主题 true 、false
 default_theme='argon_mc1'                                                   # 默认主题 结合主题文件夹名字
@@ -43,29 +43,29 @@ echo '添加主题argon'
 git clone $theme_argon package/lean/luci-theme-argon-mc
 echo 'CONFIG_PACKAGE_luci-theme-argon-mc=y' >>.config
 
-echo '添加OpenClash'
-git clone $openClash_url package/lean/luci-app-openclash
+#echo '添加OpenClash'
+#git clone $openClash_url package/lean/luci-app-openclash
 
 #  OpenClash
-echo 'CONFIG_PACKAGE_luci-app-openclash=y' >>.config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y' >>.config
+#echo 'CONFIG_PACKAGE_luci-app-openclash=y' >>.config
+#echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y' >>.config
 
-echo '添加Lienol包'
-git clone $lienol_url package/Lienol
+#echo '添加Lienol包'
+#git clone $lienol_url package/Lienol
 
 echo '添加Passwall'
 echo 'CONFIG_PACKAGE_luci-app-passwall=y' >>.config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y' >>.config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y' >>.config
-echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y' >>.config
+echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=n' >>.config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y' >>.config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y' >>.config
 echo 'CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y' >>.config
 echo 'CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y' >>.config
 
-echo '添加filebrowser'
-echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >>.config
-echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >>.config
+#echo '添加filebrowser'
+#echo 'CONFIG_PACKAGE_luci-app-filebrowser=y' >>.config
+#echo 'CONFIG_PACKAGE_luci-i18n-filebrowser-zh-cn=y' >>.config
 
 # echo '添加adguardhome'
 # git clone $adguardhome_url package/lean/luci-app-adguardhome
